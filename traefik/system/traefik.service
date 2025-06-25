@@ -1,0 +1,13 @@
+[Unit]
+Description=Traefik
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/local/bin/traefik --configfile=/etc/traefik/traefik.yml
+Restart=always
+User=traefik
+Group=traefik
+
+[Install]
+WantedBy=multi-user.target
